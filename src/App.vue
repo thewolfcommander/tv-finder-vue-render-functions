@@ -1,7 +1,8 @@
 <template>
   <div id="nav">
+    <router-link to="/with">With Render Functions</router-link> |
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/without">Without Render Functions</router-link>
   </div>
   <router-view />
 </template>
