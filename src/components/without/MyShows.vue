@@ -1,10 +1,18 @@
 <template>
   <div class="myshows-without">
     <form @submit.prevent>
-      <input type="text" v-model="search" />
+      <input
+        type="text"
+        @keydown="getShows()"
+        placeholder="Start typing and see what happens"
+        v-model="search"
+      />
       <button @click="getShows()">Press me</button>
     </form>
     <div class="shows-list" v-if="shows">
+      <p v-if="search">
+        Showing results for <span style="color: #42b983">{{ search }}</span>
+      </p>
       <div class="show-single" v-for="show in shows" :key="show.show.id">
         <h3>{{ show.show.name }}</h3>
       </div>
